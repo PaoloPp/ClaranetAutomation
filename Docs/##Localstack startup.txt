@@ -1,0 +1,10 @@
+##Localstack startup
+docker run --rm -it -p 4566:4566 -p 4510-4559:4510-4559 localstack/localstack
+
+PRO version:
+docker run \
+  --rm -it \
+  -p 4566:4566 \
+  -p 4510-4559:4510-4559 \
+  -e LOCALSTACK_API_KEY=${LOCALSTACK_API_KEY:- } \
+  localstack/localstack-pro
