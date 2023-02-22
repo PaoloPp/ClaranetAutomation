@@ -1,0 +1,24 @@
+[31m╷[0m[0m
+[31m│[0m [0m[1m[31mError: [0m[0m[1mMissing required argument[0m
+[31m│[0m [0m
+[31m│[0m [0m[0m  on asg.tf line 1, in resource "aws_autoscaling_group" "web-asg":
+[31m│[0m [0m   1: resource "aws_autoscaling_group" "web-asg" [4m{[0m[0m
+[31m│[0m [0m
+[31m│[0m [0mThe argument "min_size" is required, but no definition was found.
+[31m╵[0m[0m
+[31m╷[0m[0m
+[31m│[0m [0m[1m[31mError: [0m[0m[1mMissing required argument[0m
+[31m│[0m [0m
+[31m│[0m [0m[0m  on asg.tf line 1, in resource "aws_autoscaling_group" "web-asg":
+[31m│[0m [0m   1: resource "aws_autoscaling_group" "web-asg" [4m{[0m[0m
+[31m│[0m [0m
+[31m│[0m [0mThe argument "max_size" is required, but no definition was found.
+[31m╵[0m[0m
+[31m╷[0m[0m
+[31m│[0m [0m[1m[31mError: [0m[0m[1minvalid value for name (cannot begin with sg-)[0m
+[31m│[0m [0m
+[31m│[0m [0m[0m  with aws_security_group.sg_alb,
+[31m│[0m [0m  on sg.tf line 2, in resource "aws_security_group" "sg_alb":
+[31m│[0m [0m   2:   name        = [4m"sg-allow-internet-to-asg"[0m[0m
+[31m│[0m [0m
+[31m╵[0m[0m
