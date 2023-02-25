@@ -8,5 +8,5 @@ resource "aws_route53_record" "cname_route53_record" {
   name    = "www.webapp.com"
   type    = "CNAME"
   ttl     = "60"
-  records = aws_lb.web_alb.dns_name
+  records = ["www.webapp.com"]
 }

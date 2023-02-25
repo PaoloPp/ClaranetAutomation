@@ -36,14 +36,14 @@ resource "aws_security_group" "sg_asg" {
     from_port       = 80
     to_port         = 80
     protocol        = "tcp"
-    security_groups = aws_security_group.sg_alb
+    security_groups = [aws_security_group.sg_alb.id]
   }
 
   ingress {
     from_port       = 443
     to_port         = 443
     protocol        = "tcp"
-    security_groups = aws_security_group.sg_alb
+    security_groups = [aws_security_group.sg_alb.id]
   }
 
   egress {

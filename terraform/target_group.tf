@@ -15,11 +15,11 @@ resource "aws_lb_target_group" "asg-tg-443" {
 }
 
 resource "aws_autoscaling_attachment" "asg-attachment-80" {
-  autoscaling_group_name = aws_autoscaling_group.web-asg
-  alb_target_group_arn   = aws_lb_target_group.asg-tg-80
+  autoscaling_group_name = aws_autoscaling_group.web-asg.name
+  alb_target_group_arn   = aws_lb_target_group.asg-tg-80.arn
 }
 
 resource "aws_autoscaling_attachment" "asg-attachment-443" {
-  autoscaling_group_name = aws_autoscaling_group.web-asg
-  alb_target_group_arn   = aws_lb_target_group.asg-tg-443
+  autoscaling_group_name = aws_autoscaling_group.web-asg.name
+  alb_target_group_arn   = aws_lb_target_group.asg-tg-443.arn
 }

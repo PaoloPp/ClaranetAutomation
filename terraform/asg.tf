@@ -3,7 +3,7 @@ resource "aws_autoscaling_group" "web-asg" {
   min_size             = 1
   max_size             = 5
   vpc_zone_identifier  = module.vpc.private_subnets
-  launch_configuration = aws_launch_configuration.asg-lc
+  launch_configuration = aws_launch_configuration.asg-lc.name
 }
 
 resource "aws_autoscaling_policy" "web-asg-up" {
@@ -38,7 +38,7 @@ resource "aws_cloudwatch_metric_alarm" "web-cpu-alarm-up" {
   }
 
   alarm_description = "Monitoring metric for CPU utilization"
-  alarm_actions     = aws_autoscaling_policy.web-asg-up.arn
+  alarm_actions     = [aws_autoscaling_policy.web-asg-up.arn]
 
 }
 
@@ -57,6 +57,6 @@ resource "aws_cloudwatch_metric_alarm" "web-cpu-alarm-down" {
   }
 
   alarm_description = "Monitoring metric for CPU utilization"
-  alarm_actions     = aws_autoscaling_policy.web-asg-down.arn
+  alarm_actions     = [aws_autoscaling_policy.web-asg-down.arn]
 
 }
