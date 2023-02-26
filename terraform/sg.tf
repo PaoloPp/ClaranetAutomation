@@ -70,3 +70,22 @@ resource "aws_security_group" "sg_asg" {
     cidr_blocks = ["0.0.0.0/0"]
   }
 }
+
+resource "aws_security_group" "sg_rds" {
+  name        = "asg-allow-rds"
+  description = "Allow connection from the ASG to the RDS"
+  vpc_id      = module.vpc.vpc_id
+  ingress {
+    from_port   = 3306
+    to_port     = 3306
+    protocol    = "tcp"
+    cidr_blocks = module.vpc.private_subnets_cidr_blocks
+  }
+
+  egress {
+    from_port   = 0
+    to_port     = 0
+    protocol    = "all"
+    cidr_blocks = ["0.0.0.0/0"]
+  }
+}

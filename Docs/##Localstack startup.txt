@@ -1,5 +1,0 @@
-##Localstack startup
-docker run --rm -it -p 4566:4566 -p 4510-4559:4510-4559 localstack/localstack
-
-PRO version:
-docker run --rm -it   -p 4566:4566   -p 4510-4559:4510-4559   -e LOCALSTACK_API_KEY=6UYu5UgtMY -e EC2_VM_MANAGER=docker -e DEBUG=1 -e DNS_ADDRESS=127.0.0.1 -v /var/run/docker.sock:/var/run/docker.sock localstack/localstack-pro:1.4

@@ -5,6 +5,10 @@ resource "aws_autoscaling_group" "web-asg" {
   max_size             = 2
   vpc_zone_identifier  = module.vpc.private_subnets
   launch_configuration = aws_launch_configuration.asg-lc.name
+  depends_on = [
+    aws_efs_mount_target.mount,
+    aws_efs_file_system.wp_efs
+  ]
 }
 
 resource "aws_autoscaling_policy" "web-asg-up" {
