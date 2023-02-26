@@ -1,7 +1,8 @@
 resource "aws_autoscaling_group" "web-asg" {
   name                 = "web-asg"
   min_size             = 1
-  max_size             = 5
+  desired_capacity     = 1
+  max_size             = 2
   vpc_zone_identifier  = module.vpc.private_subnets
   launch_configuration = aws_launch_configuration.asg-lc.name
 }

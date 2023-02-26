@@ -46,6 +46,23 @@ resource "aws_security_group" "sg_asg" {
     security_groups = [aws_security_group.sg_alb.id]
   }
 
+  ingress {
+    description = "EFS mount target"
+    from_port   = 2049
+    to_port     = 2049
+    protocol    = "tcp"
+    cidr_blocks = ["0.0.0.0/0"]
+  }
+
+  ingress {
+    description = "SSH from VPC"
+    from_port   = 22
+    to_port     = 22
+    protocol    = "tcp"
+    cidr_blocks = ["0.0.0.0/0"]
+  }
+
+
   egress {
     from_port   = 0
     to_port     = 0
