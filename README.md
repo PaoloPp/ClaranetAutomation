@@ -9,14 +9,14 @@ To run it please install the followings:
 3. [Ensure that the AWS credentials are set](https://developer.hashicorp.com/terraform/tutorials/aws-get-started/aws-build#prerequisites)
 
 Then, simply clone the repository: 
-'''
+```
 git clone https://github.com/PaoloPp/ClaranetAutomation.git
-'''
+```
 
 Move to the folder ClaranetAutomation/Terraform and run 
-'''
+```
 terraform init
 terraform plan
 terraform apply
-'''
+```
 With the last command you will be asked for the RDS DB password of your choice.
